@@ -1,0 +1,162 @@
+* {/*リセットCSS*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: cornflowerblue;/*文字色の指定*/
+    font-family: 'M PLUS 2', sans-serif;/*フォントの指定*/
+}
+
+header {/*ヘッダーの縦幅の指定*/
+    height: 100px;/*ヘッダーの縦幅*/
+    background-color: yellow;/*背景色*/
+}
+
+.logo {
+    display: inline-block;
+}
+
+.logo img {
+    position: absolute;/*ヘッダーロゴの指定*/
+    top: 0;/*絶対値の指定*/
+    left: 10px;/*絶対値の指定*/
+    width: 180px;/*ロゴ画像幅の指定*/
+    height: 80px;/*ロゴ画像高さの指定*/
+}
+
+header nav {
+    box-sizing: border-box;
+    position: fixed;
+    top: 80px;
+    display: none;
+    width: 100%;
+    background-color: yellow;/*背景色*/
+    height: calc(100% - 60px);
+    opacity: 0.9;
+    /* 3. 横からスライドの場合 */
+    /*display: block;
+    right: -100%;
+    transition: right .5s;
+    /* ここまで */
+}
+/* 3. 横からスライドの場合 */
+/*header nav.sp_open {
+    right: 0;
+}*/
+/* ここまで */
+header nav ul {
+    list-style: none; /* リストのマーカータイプを非表示にする */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+header nav ul li a {
+    display: block;
+    padding: 25px;
+    border-radius: 5px;
+    color: #666;
+    font-size: 1.8rem;
+    text-align: center;
+    text-decoration: none;
+}
+#drawer_toggle {/*ハンバーガーメニュー*/
+    z-index: 200;
+    box-sizing: border-box;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+#drawer_toggle span {
+    position: absolute;
+    top: 19px;
+    left: 17px;
+    display: inline-block;
+    width: 30px;/*ハンバーガーメニュー親要素に対しての横幅*/
+    height: 3px;/*ハンバーガーメニュー横棒の太さ*/
+    border-radius: 2px;/* すべての角が2pxの丸みを持つ*/
+    background-color: #666;/*背景色*/
+    vertical-align: top;/*上端を親要素や隣接する要素の上端に合わせる*/
+}
+#drawer_toggle span:nth-child(2) {/*※ハンバーガーメニュー横線の位置を変更*/
+    margin-top: 10px;
+}
+#drawer_toggle span:last-child {/*※ハンバーガーメニュー横線の位置を変更*/
+    margin-top: 20px;
+}
+#drawer_toggle.open span {/*ハンバーガーメニュークリック時*/
+    top: 29px;
+    left: 14px;
+    width: 35px;
+    margin: 0;
+}
+#drawer_toggle.open span:first-child {
+    transition: 0.3s;
+    transform: rotate(45deg);
+}
+#drawer_toggle.open span:nth-child(2) {
+    display: none;
+}
+#drawer_toggle.open span:last-child {
+    transition: 0.3s;
+    transform: rotate(-45deg);
+}
+
+@media (min-width: 768px) {/*下記記載の指定を効かせたい最小幅の指定*/
+    header {
+        height: 120px;/*ヘッダーの幅の指定*/
+    }
+    header.logo {
+        top: 25px;/*ヘッダーロゴの位置の指定*/
+        left: 30px;/*ヘッダーロゴの位置の指定*/
+        width: 250px;/*ヘッダーロゴの幅の指定*/
+    }
+    .logo img {
+        width: 200px;/*ヘッダーロゴのサイズの指定*/
+        height: 100px;/*ヘッダーロゴのサイズの指定*/
+    }
+    header nav {
+        display: inline-block;
+        position: absolute;/*絶対値の指定*/
+        top: 40px;
+        right: 0;/*絶対値の指定*/
+        width: auto;
+        height: auto;
+        margin-right: 15px;
+        font-size: 1.4rem;
+        opacity: 1;
+    }
+    header nav ul {/*要素の横並び幅の指定*/
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: unset;
+    }
+    header nav ul li {
+        display: inline-block;
+        height: 35px;
+        border-radius: 2px;
+        line-height: 35px;
+    }
+    header nav ul li:hover {/*要素のホバー時の背景色の指定*/
+        background-color: gold;
+    }
+    header nav ul li:hover a {/*要素のホバー時の文字色の指定*/
+        color: azure;
+    }
+    header nav ul li a {
+        display: block;
+        padding: 0 15px;
+        color: #9c9b98;
+        font-size: unset;
+        text-decoration: none;
+        transition: color .3s;
+    }
+    #drawer_toggle {/*ハンバーガーメニュー*/
+        display: none;/*非表示にする*/
+    }
+}

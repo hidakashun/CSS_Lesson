@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"><!--cssの読み込み-->
+    <title>レスポンシブ対応ハンバーガーメニュー</title>
+</head>
+<body>
+    <header>
+        <h1 class="logo"><!--ヘッダーロゴ-->
+            <a href="#"><!--ヘッダーロゴの画像aはリンク先の記述-->
+                <img src="images/icon.png" alt="icon.png">
+            </a>
+        </h1>
+
+        <div id="drawer_toggle"><!--ハンバーガーメニュー-->
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="global_nav"><!--ナビゲーションリンク--><!--※ハンバーガーメニューの実装のためにIDを付与-->
+            <ul>
+                <li><a href="">About</a></li>
+                <li><a href="">投稿一覧</a></li>
+                <li><a href="">ユーザー一覧</a></li>
+                <li><a href="">新規登録</a></li>
+                <li><a href="">ログイン</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main></main>
+    <footer></footer>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script><!--CDNでjquery読み込み-->
+    <script>
+        $(function(){
+            //ここにコードを書く
+            // 1. 上からスライド
+            //$("#drawer_toggle").click(function(){
+                //$(this).toggleClass("open");
+                //$("#global_nav").slideToggle();
+            //});
+
+            // 2. フェードイン
+            $("#drawer_toggle").click(function(){
+                $(this).toggleClass("open");
+                $("#global_nav").fadeToggle();
+            });
+
+            // 3. 横からスライド
+            //$("#drawer_toggle").click(function(){
+                //$(this).toggleClass("open");
+                //$("#global_nav").toggleClass("sp_open");
+            //});
+        });
+    </script>
+</body>
+</html>
