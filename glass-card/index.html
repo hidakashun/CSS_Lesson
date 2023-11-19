@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ガラスカード</title>
+</head>
+<body>
+    <div class="card">
+        <div class="content">
+            <h2>01</h2>
+            <h3>ガラスカード</h3>
+            <p>このガラスの表現は下記ボタンのvanilla-tilt.jsを使用している。<br>また、背景の円はただの画像の表現ではなく、clip-pathにて円を算出してcssに記載している。</p>
+            <a href="https://bennettfeely.com/clippy/">clip-path</a>
+            <br>
+            <a href="https://micku7zu.github.io/vanilla-tilt.js/">vanilla-tilt.js</a>
+        </div>
+    </div>
+    <!--script src="/vanilla-tilt.js"></script-->
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="text/javascript">
+        VanillaTilt.init(document.querySelector(".card"), {
+            max: 25,
+            speed: 400,
+            glare: true,//カーソルの位置に光が当たる
+            "max-glare": 1,
+        });
+    </script>
+</body>
+</html>

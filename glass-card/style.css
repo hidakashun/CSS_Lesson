@@ -1,0 +1,97 @@
+/*↓フォントの指定*//*@importを指定してURLをコピーし、貼り付け*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@500&family=Poppins:ital,wght@0,100;0,400;0,500;1,300;1,600&display=swap');
+/*↑*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*div要素のボーダーの幅などを含むことができる*/
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;/*高さの指定*/
+    background-color: #356f4a;/*背景色*/
+    display: flex;/*配置を自由に替えるため*/
+    align-items: center;/*高さの中央よせ*/
+    justify-content: center;/*幅の中央よせ*/
+}
+
+body::before {/*左上の背景の円作成*/
+    content: "";/*空でないといけない*/
+    position: absolute;/*絶対値*/
+    width: 100%;/*横幅いっぱい*/
+    height: 100%;/*高さいっぱい*/
+    background: linear-gradient(#00ff11, #15b074);/*円のグラデーション*//*colorをつけないのは、直接背景色にしないため*/
+    clip-path: circle(61.8% at 19% 25%);/*円形をかたどるhttps://bennettfeely.com/clippy/を使用*/
+    z-index: -1;
+}
+
+body::after {/*右下の背景の円作成*/
+    content: "";/*空でないといけない*/
+    position: absolute;/*絶対値*/
+    width: 100%;/*横幅いっぱい*/
+    height: 100%;/*高さいっぱい*/
+    background: linear-gradient(#00ff11, #15b074);/*円のグラデーション*//*colorをつけないのは、直接背景色にしないため*/
+    clip-path: circle(28.7% at 100% 79%);/*円形をかたどるhttps://bennettfeely.com/clippy/を使用*/
+    z-index: -1;
+}
+
+.card {
+    border-top: 1px solid rgba(255, 255, 255, 0.5);/*外枠の範囲指定*//*左上から光が当たっている様な表現*/
+    border-left: 1px solid rgba(255, 255, 255, 0.5);/*外枠の範囲指定*//*左上から光が当たっている様な表現*/
+    width: 380px;/*横幅の指定*/
+    height: 600px;/*高さの指定*/
+    display: flex;/*配置を自由に替えるため*/
+    align-items: center;/*高さ中央寄せ*/
+    justify-content: center;/*横幅中央よせ*/
+    text-align: center;/*テキスト中央寄せ*/
+    border-radius: 15px;/*角に丸みを持たせる*/
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);/*影を表現*/
+    background: rgba(255, 255, 255, 0.1);/*背景を白で若干透けさせてガラス感を表現*/
+    backdrop-filter: blur(8px);/*カードの後ろの円にぼやける様な表現をさせる*/
+    overflow: hidden;/*はみ出しの非表示*/
+}
+
+.card .content {
+    position: relative;/*絶対値*/
+    padding: 20px;/*コンテントの外幅*/
+    transform: translateY(200px);/*ふわっと表現、下から出すのでY軸の200pxを設定*/
+    opacity: 0;/*最初の透け具合、最初は見えなくなるように*/
+    transition: 0.5s;/*0.5sで表示*/
+}
+.card:hover .content {
+    transform: translateY(0);/*ふわっと表現、Y軸の0pxを設定*/
+    opacity: 1;/*ホバー時の透け具合、最初は見えなくなるように*/
+}
+
+.card .content h2 {
+    position: absolute;
+    top: -80px;
+    right: 30px;
+    font-size: 8rem;
+    color: rgba(255, 255, 255, 0.1);
+}
+
+.card .content h3 {
+    color: white;
+    font-size: 1.8rem;
+}
+
+.card .content p {
+    font-size: 1rem;
+    color: white;
+    font-weight: 300;/*文字を細長くする*/
+}
+
+.card .content a {
+    text-decoration: none;/*ボーダーラインを消す*/
+    display: inline-block;/*幅と高さの指定を可能にする*/
+    padding: 8px 20px;/*ボタン内側の余白*/
+    background: white;
+    margin-top: 15px;/*ボタン外側の余白*/
+    border-radius: 20px;/*角の丸み*/
+    color: black;
+    font-weight: 500;/*フォントの太さ*/
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);/*ボタンの影*/
+}
