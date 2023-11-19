@@ -1,0 +1,114 @@
+/*↓フォントの指定*//*@importを指定してURLをコピーし、貼り付け*/
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@500&family=Poppins:ital,wght@0,100;0,400;0,500;1,300;1,600&display=swap');
+/*↑*/
+
+* {/*リセットcss*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/*div要素のボーダーの幅などを含むことができる*/
+    font-family: 'Poppins', sans-serif;
+}
+html,
+body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background: linear-gradient(#c8ff00, #02d4f9);/*背景のグラデーション*//*colorをつけないのは、直接背景色にしないため*/
+}
+
+.wrapper .button {
+    height: 60px;
+    width: 60px;
+    float: left;/*要素を包含ブロックの左側に沿うように設置*/
+    margin: 0 5px;
+    background-color: white;
+    border-radius: 50px;/*角を丸める*/
+    cursor: pointer;/*カーソルが当たるとポインターになる*/
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);/*影をつける*/
+    overflow: hidden;/*はみ出している要素を非表示にする*/
+
+}
+
+.wrapper .button:hover {/*ボタンホバー時*/
+    width: 200px;/*ボタンの幅を拡大して文字が収まるようにする*/
+    transition: all 0.3s ease-out;/*0.3秒かけて大きくなる*/
+}
+
+.wrapper .button:nth-child(1):hover .icon {
+    background: #4267b2;
+}
+.wrapper .button:nth-child(2):hover .icon {
+    background: #1da1f2;
+}
+.wrapper .button:nth-child(3):hover .icon {
+    background: #e1306c;
+}
+.wrapper .button:nth-child(4):hover .icon {
+    background: #333;
+}
+.wrapper .button:nth-child(5):hover .icon {
+    background: #ff0000;
+}
+.wrapper .button:nth-child(6):hover .icon {
+    background: rgb(82, 255, 1);
+}
+.wrapper .button:nth-child(7):hover .icon {
+    background: #333;
+}
+.wrapper .button:nth-child(8):hover .icon {
+    background: #333;
+}
+
+.wrapper .button .icon {/*iconを中に入れる*/
+    display: inline-block;
+    height: 60px;/*高さ*/
+    width: 60px;/*幅*/
+    border-radius: 50px;/*角丸*/
+    box-sizing: border-box;
+    line-height: 60px;
+    text-align: center;
+    transition: all 0.3s;
+}
+
+.wrapper .button .icon i {/*アイコンの大きさ*/
+    font-size: 30px;
+    line-height: 60px;/*アイコン中央寄せ*/
+}
+
+.wrapper .button:hover .icon i {/*ホバー時アイコン白色*/
+    color: white;
+}
+
+.wrapper .button span {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 60px;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.wrapper .button:nth-child(1):hover span {/*ホバー時の文字の色*/
+    color: #4267b2;
+}
+.wrapper .button:nth-child(2):hover span {
+    color: #1da1f2;
+}
+.wrapper .button:nth-child(3):hover span {
+    color: #e1306c;
+}
+.wrapper .button:nth-child(4):hover span {
+    color: #333;
+}
+.wrapper .button:nth-child(5):hover span {
+    color: #ff0000;
+}
+.wrapper .button:nth-child(6):hover span {
+    color: rgb(82, 255, 1);
+}
+.wrapper .button:nth-child(7):hover span {
+    color: #333;
+}
+.wrapper .button:nth-child(8):hover span {
+    color: #333;
+}
