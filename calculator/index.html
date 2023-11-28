@@ -6,18 +6,18 @@
 </head>
 <link rel="stylesheet" href="style.css" />
 <body>
-  <form name="dentaku">
+  <form name="dentaku"><!--入力フォーム-->
     <table>
       <!-- 液晶画面部分 -->
       <tr>
         <td colspan="4">
-          <input type="text" class="display" name="display" value="" disabled>
+          <input type="text" class="display" name="display" value="" disabled><!--disabled属性は要素を無効化（非活性化）するための属性-->
         </td>
       </tr>
 
       <!-- 上から1段目（7~9＋÷） -->
       <tr>
-        <td><input type="button" value="7" onclick="get_calc(this)"></td>
+        <td><input type="button" value="7" onclick="get_calc(this)"></td><!--onclick属性はその要素がクリックされたときに実行されるJavaScriptのコードを指定するための属性-->
         <td><input type="button" value="8" onclick="get_calc(this)"></td>
         <td><input type="button" value="9" onclick="get_calc(this)"></td>
         <td><input type="button" value="÷" class="operator" name="div_btn" onclick="get_calc(this)"></td>
